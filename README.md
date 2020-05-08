@@ -45,7 +45,7 @@ const MyComponent = ({children, ...props}) => {
 
 ⚠️ Children node that aren't React elements, such as text nodes, will be skipped.
 
-⚠️ When adding custom props to HTML nodes (div, span, ...), an occasional Reacy unsupported prop warning can rise up.
+⚠️ When adding custom props to HTML nodes (div, span, ...), an occasional React 'unsupported prop' warning can rise up.
 
 ✅ Empty node lists are allowed.
 
