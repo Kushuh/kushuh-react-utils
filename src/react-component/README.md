@@ -30,7 +30,7 @@ addPropsToChildren accept two parameters, which are required :
 // Valid.
 addPropsToChildren(<div/>, newProps);
 
-addPropsToChildren(['A text node.', null, <Component/>, 44], newProps);
+addPropsToChildren(['A text node.', null, <Component/>, 42], newProps);
 
 addPropsToChildren([], newProps);
 
@@ -41,7 +41,7 @@ addPropsToChildren(null, newProps);
 // Component is a React Class, not a React Node
 addPropsToChildren(Component, newProps);
 
-// Object are not accepted as React Nodes
+// Objects are not accepted as React Nodes
 addPropsToChildren({foo: 'bar'}, newProps);
 ```
 
