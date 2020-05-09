@@ -24,6 +24,7 @@ class Obj3 extends React.Component<{[key: string]: any}, unknown> {
 	}
 }
 const obj3 = <Obj3/>;
+const obj4 = {foo: 'bar'};
 
 describe(
 	'test objects',
@@ -43,6 +44,11 @@ describe(
 
 		it('should render obj3 as React Node', () => {
 			expect(React.isValidElement(obj3)).toBe(true);
+		});
+
+		it('should render obj4 as Object', () => {
+			expect(obj4.constructor).toBe(Object);
+			expect(React.isValidElement(obj4)).toBe(false);
 		});
 	}
 );
@@ -69,6 +75,17 @@ describe(
 		it('should add prop0 to obj3', () => {
 			const res = addPropsToChildren(obj3, prop0);
 			expect(res['props']['foo']).toBe('bar');
+		});
+
+		it('should fail to add prop0 to obj4', () => {
+			let status = 0;
+			try {
+				addPropsToChildren(obj4, prop0);
+			} catch (e) {
+				status = 1;
+			}
+
+			expect(status).toBe(1);
 		});
 	}
 );
@@ -119,6 +136,17 @@ describe(
 
 			expect(status).toBe(1);
 		});
+
+		it('should fail to add prop1 to obj4', () => {
+			let status = 0;
+			try {
+				addPropsToChildren(obj4, prop1);
+			} catch (e) {
+				status = 1;
+			}
+
+			expect(status).toBe(1);
+		});
 	}
 );
 
@@ -156,6 +184,17 @@ describe(
 			expect(res2['props']['foo']).toBe('bar');
 			expect(res2['props']['bar']).toBe('bar');
 		});
+
+		it('should fail to add prop2 to obj4', () => {
+			let status = 0;
+			try {
+				addPropsToChildren(obj4, prop2);
+			} catch (e) {
+				status = 1;
+			}
+
+			expect(status).toBe(1);
+		});
 	}
 );
 
@@ -181,6 +220,17 @@ describe(
 		it('should add prop3 to obj3', () => {
 			const res = addPropsToChildren(obj3, prop3);
 			expect(res['props']['foo']).toBe('bar');
+		});
+
+		it('should fail to add prop3 to obj4', () => {
+			let status = 0;
+			try {
+				addPropsToChildren(obj4, prop3);
+			} catch (e) {
+				status = 1;
+			}
+
+			expect(status).toBe(1);
 		});
 	}
 );
@@ -232,6 +282,17 @@ describe(
 
 			expect(status).toBe(1);
 		});
+
+		it('should fail to add pro40 to obj4', () => {
+			let status = 0;
+			try {
+				addPropsToChildren(obj4, prop4);
+			} catch (e) {
+				status = 1;
+			}
+
+			expect(status).toBe(1);
+		});
 	}
 );
 
@@ -247,6 +308,14 @@ describe(
 				expect(res[0]['props']['className']).toBe('blue');
 				expect(res[1]).toBe('A text node.');
 				expect(res[2]['props']['foo']).toBe('bar');
+			}
+		);
+
+		it(
+			'should add foo prop to empty array',
+			() => {
+				const res = addPropsToChildren([], prop0);
+				expect(res).toStrictEqual([]);
 			}
 		);
 	}

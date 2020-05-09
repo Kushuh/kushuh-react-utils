@@ -24,28 +24,33 @@ const MyComponent = ({children, ...props}) => {
   return (
     <div>
       {addPropsToChildren(children, newProps)}
-      <div>
-        {
-          addPropsToChildren(
-            [<Component1/>, <Component2/>, "A text node.", <div/>],
-            {opacity: 0.8}
-          )
-        }
-        {
-          addPropsToChildren(
-            <OtherComponent/>,
-            props => ({anotherProp: 'random value', ...props})
-          )
-        }
-      </div>
     </div>
   );
 };
 ```
 
-addPropsToChildren accept two parameters, which are mandatory :
+addPropsToChildren accept two parameters, which are required :
 
 **Children**, any valid React Node, or Array of React Nodes.
+
+```javascript
+// Valid.
+addPropsToChildren(<div/>, newProps);
+
+addPropsToChildren(['A text node.', null, <Component/>, 44], newProps);
+
+addPropsToChildren([], newProps);
+
+addPropsToChildren(null, newProps);
+
+// Not valid.
+
+// Component is a React Class, not a React Node
+addPropsToChildren(Component, newProps);
+
+// Object are not accepted as React Nodes
+addPropsToChildren({foo: 'bar'}, newProps);
+```
 
 **Props** to add to the Children, in a valid javascript Object. It can also be a Function that returns such an Object.
 
