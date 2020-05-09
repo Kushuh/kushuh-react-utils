@@ -6,10 +6,19 @@ const alterChild: (props, child, index) => React.ReactNode =
         child: React.ReactNode,
         index: number
     ) => {
-        if (React.isValidElement(child)) {
+        if (child != null && React.isValidElement(child)) {
+            const {props: childProps, ...childParams} = child;
+            const newProps = typeof props === 'function' ?
+                props(childProps, index) :
+                Object.assign({...childProps}, {...props});
+
+            if (newProps.constructor !== Object) {
+                throw new Error(`Invalid props returned : expected Object, got ${newProps.constructor.name}.`)
+            }
+
             return React.cloneElement(
-                child,
-                typeof props === 'function' ? props(child, index) : Object.assign(child.props, props)
+                {...childParams, props: {}},
+                newProps
             );
         } else {
             /**
@@ -27,16 +36,24 @@ const alterChild: (props, child, index) => React.ReactNode =
  */
 const addPropsToChildren: (children, props) => React.ReactNode =
     (
-        children: React.ReactNode,
-        props: ((child: unknown, index: number) => Record<string, unknown>) | (Record<string, unknown>)
+        children: React.ReactNode | React.ReactNodeArray,
+        props: ((child: React.ReactNode, index: number) => Record<string, unknown>) | (Record<string, unknown>)
     ) => {
-        if (children.constructor === Array) {
+        if (props == null) {
+           throw new Error('props cannot be set to null : please pass a valid javascript object.')
+        } else if (props.constructor !== Object && props.constructor !== Function) {
+            throw new Error(`Non valid properties : expected Object, got ${props.constructor.name}.`);
+        }
+
+        if (children == null) {
+            return null;
+        } else if (children.constructor === Array) {
             return React.Children.map(
                 children,
                 (child, index) => alterChild(props, child, index)
-            )
+            );
         } else {
-            return alterChild(props, children, 0)
+            return alterChild(props, children, 0);
         }
     };
 
