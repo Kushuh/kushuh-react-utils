@@ -34,7 +34,7 @@ const MyComponent = ({children, ...props}) => {
         {
           addPropsToChildren(
             <OtherComponent/>,
-            {anotherProp: 'random value'}
+            props => ({anotherProp: 'random value', ...props})
           )
         }
       </div>
@@ -44,8 +44,32 @@ const MyComponent = ({children, ...props}) => {
 ```
 
 addPropsToChildren accept two parameters, which are mandatory :
-+ children : 0 or more React nodes. They don't have to be React components.
-+ props: an Object, or a Function that returns an Object.
+
+**Children**, any valid React Node, or Array of React Nodes.
+
+**Props** to add to the Children, in a valid javascript Object. It can also be a Function that returns such an Object.
+
+A Props function receives two parameters : the original props, and an index (0 if Children is a standalone child)
+```javascript
+// First example of functional props : add parameters to the original ones.
+(props, index) => {
+  //... do stuff
+
+  return ({
+    foo: 'bar',
+    ...props
+  });
+};
+
+// Second example : remove foo property
+({foo, ...props}) => props;
+
+// Third example : remove all props except foo
+({foo}) => ({foo});
+
+// Fourth example : will fail since it doesn't return a valid object
+() => 'A string';
+```
 
 ⚠️ Children node that aren't React elements, such as text nodes, will be skipped.
 
