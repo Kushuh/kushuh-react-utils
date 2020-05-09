@@ -1,9 +1,42 @@
 # Kushuh's React Utils
 
-|    Name     |  Version  |   Description  |
-|    :---    |   :---:   |      :---      |  
-| React Utils |   1.1.0   | Some utils functions I often use in my applications, all for React. |
-| React Component functions |   1.0.4   | React Element Utils. |
+###### About
+<p align="center">
+    <a href="https://www.npmjs.com/package/kushuh-react-utils#addpropstochildren">
+        <img src="https://img.shields.io/npm/v/kushuh-react-utils" alt="version"/>
+    </a>
+    <a href="https://github.com/Kushuh/kushuh-react-utils/blob/master/LICENSE">
+        <img src="https://img.shields.io/npm/l/kushuh-react-utils" alt="license"/>
+    </a>
+    <a href="https://github.com/Kushuh/kushuh-react-utils/issues">
+        <img src="https://img.shields.io/github/issues-raw/Kushuh/kushuh-react-utils" alt="open issues"/>
+    </a>
+    <a href="https://github.com/Kushuh/kushuh-react-utils">
+        <img src="https://img.shields.io/github/last-commit/Kushuh/kushuh-react-utils" alt="activity"/>
+    </a>
+    <a href="https://github.com/Kushuh/kushuh-react-utils/graphs/contributors">
+        <img src="https://img.shields.io/github/contributors/Kushuh/kushuh-react-utils" alt="contributors"/>
+    </a>
+</p>
+
+###### Dependencies
+<p align="center">
+    <a href="https://github.com/Kushuh/kushuh-react-utils">
+        <img src="https://img.shields.io/github/repo-size/Kushuh/kushuh-react-utils" alt="repo size"/>
+    </a>
+    <a href="https://github.com/facebook/react">
+        <img src="https://img.shields.io/github/package-json/dependency-version/Kushuh/kushuh-react-utils/react" alt="react version"/>
+    </a>
+    <a href="https://github.com/facebook/react/tree/master/packages/react-dom">
+        <img src="https://img.shields.io/github/package-json/dependency-version/Kushuh/kushuh-react-utils/react-dom" alt="react-dom version"/>
+    </a>
+    <a href="https://github.com/facebook/create-react-app/tree/master/packages/react-scripts">
+        <img src="https://img.shields.io/github/package-json/dependency-version/Kushuh/kushuh-react-utils/react-scripts" alt="react-scripts version"/>
+    </a>
+    <a href="https://github.com/Microsoft/TypeScript">
+        <img src="https://img.shields.io/github/package-json/dependency-version/Kushuh/kushuh-react-utils/typescript" alt="typescript version"/>
+    </a>
+</p>
 
 ## List of functions
 
