@@ -1,6 +1,5 @@
 # Kushuh's React Utils
 
-
 |    Name     |  Version  |   Description  |
 |    :---    |   :---:   |      :---      |  
 | React Utils |   1.0.4   | Some utils functions I often use in my applications, all for React. |
