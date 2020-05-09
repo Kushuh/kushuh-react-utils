@@ -1,6 +1,6 @@
 # Kushuh's React Utils
 
-###### About
+<p align="center"><h6>About</h6></p>
 <p align="center">
     <a href="https://www.npmjs.com/package/kushuh-react-utils#addpropstochildren">
         <img src="https://img.shields.io/npm/v/kushuh-react-utils" alt="version"/>
@@ -19,7 +19,7 @@
     </a>
 </p>
 
-###### Dependencies
+<p align="center"><h6>More</h6></p>
 <p align="center">
     <a href="https://github.com/Kushuh/kushuh-react-utils">
         <img src="https://img.shields.io/github/repo-size/Kushuh/kushuh-react-utils" alt="repo size"/>
