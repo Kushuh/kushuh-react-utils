@@ -27,15 +27,6 @@
     <a href="https://github.com/facebook/react">
         <img src="https://img.shields.io/github/package-json/dependency-version/Kushuh/kushuh-react-utils/react" alt="react version"/>
     </a>
-    <a href="https://github.com/facebook/react/tree/master/packages/react-dom">
-        <img src="https://img.shields.io/github/package-json/dependency-version/Kushuh/kushuh-react-utils/react-dom" alt="react-dom version"/>
-    </a>
-    <a href="https://github.com/facebook/create-react-app/tree/master/packages/react-scripts">
-        <img src="https://img.shields.io/github/package-json/dependency-version/Kushuh/kushuh-react-utils/react-scripts" alt="react-scripts version"/>
-    </a>
-    <a href="https://github.com/Microsoft/TypeScript">
-        <img src="https://img.shields.io/github/package-json/dependency-version/Kushuh/kushuh-react-utils/typescript" alt="typescript version"/>
-    </a>
 </p>
 
 ## List of functions

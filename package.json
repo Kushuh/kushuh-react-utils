@@ -7,16 +7,15 @@
     "url": "https://github.com/kushuh"
   },
   "description": "Some utils I often use in my applications.",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "private": false,
   "dependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react": "^16.13.1"
   },
   "main": "./lib/index.js",
   "files": [ "lib/*.js", "build/*" ],
   "scripts": {
+    "publish": "yarn test && yarn build && yarn publish",
     "build": "rollup -c && tsc",
     "test": "jest"
   },
@@ -44,32 +43,18 @@
   "devDependencies": {
     "typescript": "^3.8.3",
     "@babel/core": "^7.9.6",
-    "@babel/parser": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "@babel/preset-react": "^7.9.4",
-    "@babel/preset-typescript": "^7.9.0",
-    "@babel/types": "^7.9.6",
     "@jest/globals": "^26.0.1",
-    "@testing-library/react": "^10.0.4",
-    "@types/jest": "^25.2.1",
-    "@types/node": "^13.13.5",
     "@types/react": "^16.9.34",
-    "@types/react-dom": "^16.9.7",
     "@typescript-eslint/eslint-plugin": "^2.31.0",
     "@typescript-eslint/parser": "^2.31.0",
-    "babel-jest": "^26.0.1",
-    "babel-loader": "^8.1.0",
-    "babel-plugin-external-helpers": "^6.22.0",
-    "babel-plugin-module-resolver": "^4.0.0",
-    "babel-preset-env": "^1.7.0",
     "jest": "^26.0.1",
-    "react-test-renderer": "^16.13.1",
     "rollup": "^2.8.2",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-terser": "^5.3.0",
     "rollup-plugin-typescript2": "^0.27.0",
-    "ts-jest": "^25.5.0",
-    "typescript-eslint-parser": "^22.0.0"
+    "ts-jest": "^25.5.0"
   }
 }
