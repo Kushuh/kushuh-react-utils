@@ -49,7 +49,7 @@ addPropsToChildren accept two parameters, which are mandatory :
 
 **Props** to add to the Children, in a valid javascript Object. It can also be a Function that returns such an Object.
 
-A Props function receives two parameters : the original props, and an index to determine position in the React Node Array (0 if Children is a standalone child).
+A Props function receives two parameters : the original props, and an index to determine the position in the React Node Array (0 if Children is a standalone child).
 ```javascript
 // First example of functional props : add parameters to the original ones.
 (props, index) => {
