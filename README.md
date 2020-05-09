@@ -8,7 +8,7 @@
 
 ## List of functions
 
-* *[React Component functions](#react-component-functions)*
+* **[React Component functions](#react-component-functions)**
     * [addPropsToChildren](#addpropstochildren)
     * [setStateAsync](#setstateasync)
 
