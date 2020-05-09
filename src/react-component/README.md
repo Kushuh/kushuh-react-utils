@@ -1,5 +1,9 @@
 ### React Component Functions
 
+|    Name     |  Version  |   Description  |
+|    :---    |   :---:   |      :---      |  
+| React Component functions |   1.0.4   | React Element Utils. |
+
 #### addPropsToChildren
 
 Add the key-value pairs of a javascript object to the properties of a list of React Nodes.
