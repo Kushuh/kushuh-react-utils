@@ -7,7 +7,7 @@
     "url": "https://github.com/kushuh"
   },
   "description": "Some utils I often use in my applications.",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "private": false,
   "dependencies": {
     "react": "^16.13.1",
@@ -16,6 +16,7 @@
     "typescript": "^3.8.3"
   },
   "main": "./lib/index.js",
+  "files": [ "lib/*.js", "build/*.js" ],
   "scripts": {
     "build": "rollup -c && tsc",
     "test": "jest"
