@@ -15,7 +15,7 @@
   "main": "./lib/index.js",
   "files": [ "lib/*.js", "build/*" ],
   "scripts": {
-    "publish": "yarn test && yarn build && yarn publish",
+    "test-and-publish": "yarn test && yarn build && yarn publish",
     "build": "rollup -c && tsc",
     "test": "jest"
   },
