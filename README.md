@@ -55,7 +55,7 @@ addPropsToChildren(Component, newProps);
 addPropsToChildren({foo: 'bar'}, newProps);
 ```
 
-**Props** to add to the Children, in a valid javascript Object. It can also be a Function that returns such an Object.
+**Props** to add to the Children. It has to be a valid javascript pure Object. It can also be a Function that returns such an Object.
 
 A Props function receives two parameters : the original props, and an index to determine the position in the React Node Array (0 if Children is a standalone child).
 ```javascript
@@ -85,9 +85,9 @@ A Props function receives two parameters : the original props, and an index to d
 
 ✅ Empty node lists are allowed.
 
-✅ Null nodes are allowed. Note they will be removed from the results.
+✅ Null nodes are allowed. Note they will be removed from the results in a Node Array.
 
-✅ Single children can be a single element,or an array of one element.
+✅ Single children can be a single element, or an array of one element.
 
 #### setStateAsync
 
