@@ -42,6 +42,10 @@ describe(
 			expect(React.isValidElement(obj2)).toBe(false);
 		});
 
+		it('should render Obj3 as React Class', () => {
+			expect(React.isValidElement(Obj3)).toBe(false);
+		});
+
 		it('should render obj3 as React Node', () => {
 			expect(React.isValidElement(obj3)).toBe(true);
 		});
@@ -70,6 +74,17 @@ describe(
 		it('should add prop0 to obj2', () => {
 			const res = addPropsToChildren(obj2, prop0);
 			expect(res).toBe('A text node.');
+		});
+
+		it('should fail to add prop0 to Obj3', () => {
+			let status = 0;
+			try {
+				addPropsToChildren(Obj3, prop0);
+			} catch (e) {
+				status = 1;
+			}
+
+			expect(status).toBe(1);
 		});
 
 		it('should add prop0 to obj3', () => {
@@ -126,6 +141,17 @@ describe(
 			expect(status).toBe(1);
 		});
 
+		it('should fail to add prop1 to Obj3', () => {
+			let status = 0;
+			try {
+				addPropsToChildren(Obj3, prop1);
+			} catch (e) {
+				status = 1;
+			}
+
+			expect(status).toBe(1);
+		});
+
 		it('should fail to add prop1 to obj3', () => {
 			let status = 0;
 			try {
@@ -175,6 +201,17 @@ describe(
 			expect(res).toBe('A text node.');
 		});
 
+		it('should fail to add prop2 to Obj3', () => {
+			let status = 0;
+			try {
+				addPropsToChildren(Obj3, prop2);
+			} catch (e) {
+				status = 1;
+			}
+
+			expect(status).toBe(1);
+		});
+
 		it('should add prop2 to obj3', () => {
 			const res = addPropsToChildren(obj3, prop2);
 			expect(res['props']['foo']).toBe('bar');
@@ -215,6 +252,17 @@ describe(
 		it('should add prop3 to obj2', () => {
 			const res = addPropsToChildren(obj2, prop3);
 			expect(res).toBe('A text node.');
+		});
+
+		it('should fail to add prop3 to Obj3', () => {
+			let status = 0;
+			try {
+				addPropsToChildren(Obj3, prop3);
+			} catch (e) {
+				status = 1;
+			}
+
+			expect(status).toBe(1);
 		});
 
 		it('should add prop3 to obj3', () => {
@@ -270,6 +318,17 @@ describe(
 			}
 
 			expect(status).toBe(0);
+		});
+
+		it('should fail to add prop4 to Obj3', () => {
+			let status = 0;
+			try {
+				addPropsToChildren(Obj3, prop4);
+			} catch (e) {
+				status = 1;
+			}
+
+			expect(status).toBe(1);
 		});
 
 		it('should fail to add prop4 to obj3', () => {
