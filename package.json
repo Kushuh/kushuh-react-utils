@@ -12,11 +12,10 @@
   "dependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
-    "typescript": "^3.8.3"
+    "react-scripts": "3.4.1"
   },
   "main": "./lib/index.js",
-  "files": [ "lib/*.js", "build/*.js" ],
+  "files": [ "lib/*.js", "build/*" ],
   "scripts": {
     "build": "rollup -c && tsc",
     "test": "jest"
@@ -43,6 +42,7 @@
     ]
   },
   "devDependencies": {
+    "typescript": "^3.8.3",
     "@babel/core": "^7.9.6",
     "@babel/parser": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
