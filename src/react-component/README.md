@@ -77,7 +77,7 @@ A Props function receives two parameters : the original props, and an index to d
 
 ✅ Null nodes are allowed. Note they will be removed from the results in a Node Array.
 
-✅ Single children can be a single element, or an array of one element.
+✅ Single child can be a single element, or an array of one element.
 
 #### setStateAsync
 
