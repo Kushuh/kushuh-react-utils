@@ -43,15 +43,19 @@ const MyComponent = ({children, ...props}) => {
 };
 ```
 
+addPropsToChildren accept two parameters, which are mandatory :
++ children : 0 or more React nodes. They don't have to be React components.
++ props: an Object, or a Function that returns an Object.
+
 ⚠️ Children node that aren't React elements, such as text nodes, will be skipped.
 
 ⚠️ When adding custom props to HTML nodes (div, span, ...), an occasional React 'unsupported prop' warning can rise up.
 
 ✅ Empty node lists are allowed.
 
-✅ Null nodes are allowed.
+✅ Null nodes are allowed. Note they will be removed from the results.
 
-✅ Children can be a single element, or an array of one element.
+✅ Single children can be a single element,or an array of one element.
 
 #### setStateAsync
 
