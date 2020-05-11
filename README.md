@@ -31,9 +31,10 @@
 
 ## List of functions
 
-* **[React Component functions](#react-component-functions)**
-    * [addPropsToChildren](#addpropstochildren)
-    * [setStateAsync](#setstateasync)
++ **[React Component functions](#react-component-functions)**
+    + [addPropsToChildren](#addpropstochildren)
+    + [setStateAsync](#setstateasync)
++ **[Copyright](#copyright)**
 
 ---
 ### React Component Functions
@@ -134,3 +135,6 @@ class MyClassComponent extends React.Component {
 ℹ️ Never rejects.
 
 ℹ️ Resolves Empty.
+
+## Copyright
+2020 Kushuh - MIT license
