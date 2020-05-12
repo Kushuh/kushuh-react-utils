@@ -6,8 +6,12 @@
     "name": "Kushuh",
     "url": "https://github.com/kushuh"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kushuh/kushuh-react-utils"
+  },
   "description": "Some utils I often use in my applications.",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "private": false,
   "dependencies": {
     "react": "^16.13.1"
