@@ -50,7 +50,7 @@ const alterChild: (props, child, index) => React.ReactNode =
  * @param children
  * @param props
  */
-const addPropsToChildren: (children, props) => React.ReactNode =
+const addPropsToChildren: (children, props) => React.ReactNode | React.ReactNodeArray =
     (
         children: React.ReactNode | React.ReactNodeArray,
         props: ((child: React.ReactNode, index: number) => Record<string, unknown>) | (Record<string, unknown>)
