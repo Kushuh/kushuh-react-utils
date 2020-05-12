@@ -31,7 +31,7 @@ const alterChild: (props, child, index) => React.ReactNode =
             }
 
             return React.cloneElement({...childParams, props: {}}, newProps);
-        } else if (child == null || ['string', 'number'].includes(child.constructor.name.toLowerCase())) {
+        } else if (child == null || typeof child === 'number' || typeof child === 'string') {
             /**
              * Non React Element Nodes don't hold any prop, so their is no need to alter them.
              */
@@ -60,7 +60,7 @@ const addPropsToChildren: (children, props) => React.ReactNode | React.ReactNode
          * wrong arguments to be passed.
          */
         if (props == null) {
-           throw new Error('props cannot be set to null : please pass a valid javascript object.')
+           throw new Error('props cannot be set to null : please pass a valid javascript Object.')
         } else if (props.constructor !== Object && props.constructor !== Function) {
             throw new Error(`Non valid properties : expected Object, got ${props.constructor.name}.`);
         }
