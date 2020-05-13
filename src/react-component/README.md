@@ -86,7 +86,7 @@ class MyClassComponent extends React.Component {
   async myMethod() {
     //... my code
 
-    await setAsyncState(this, stateObject);
+    await setStateAsync(this, stateObject);
 
     //...
   }
@@ -96,3 +96,6 @@ class MyClassComponent extends React.Component {
 ℹ️ Never rejects.
 
 ℹ️ Resolves Empty.
+
+## Copyright
+2020 Kushuh - MIT license

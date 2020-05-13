@@ -125,7 +125,7 @@ class MyClassComponent extends React.Component {
   async myMethod() {
     //... my code
 
-    await setAsyncState(this, stateObject);
+    await setStateAsync(this, stateObject);
 
     //...
   }
