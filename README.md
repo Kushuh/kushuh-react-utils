@@ -32,6 +32,7 @@
 ## Sections
 
 [React Component Utils](https://github.com/Kushuh/kushuh-react-utils/blob/master/src/react-component/README.md)
+
 [DOM Utils](https://github.com/Kushuh/kushuh-react-utils/blob/master/src/dom/README.md)
 
 ---
