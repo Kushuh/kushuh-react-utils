@@ -10,7 +10,7 @@ export default [
 		input: './src/index.ts',
 		output: [
 			{
-				dir: 'build/',
+				dir: './build',
 				format: 'cjs'
 			}
 		],

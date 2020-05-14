@@ -11,14 +11,14 @@
     "url": "https://github.com/Kushuh/kushuh-react-utils"
   },
   "description": "Some utils I often use in my applications.",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "private": false,
   "dependencies": {
     "react": "^16.13.1"
   },
   "main": "./build/index.js",
   "files": [
-    "./build/*"
+    "build/*"
   ],
   "scripts": {
     "test-and-publish": "yarn test && yarn build && yarn publish",
