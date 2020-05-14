@@ -6,10 +6,11 @@ import {terser} from 'rollup-plugin-terser';
 export default [
 	// CommonJS
 	{
+		preserveModules: true,
 		input: './src/index.ts',
 		output: [
 			{
-				file: pkg.main,
+				dir: './build',
 				format: 'cjs'
 			}
 		],
