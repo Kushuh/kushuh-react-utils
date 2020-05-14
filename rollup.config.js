@@ -11,8 +11,7 @@ export default [
 		output: [
 			{
 				dir: './build',
-				format: 'cjs',
-				esModule: true
+				format: 'cjs'
 			}
 		],
 		external: [

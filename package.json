@@ -1,7 +1,6 @@
 {
   "name": "kushuh-react-utils",
   "license": "MIT",
-  "type": "module",
   "author": {
     "email": "kuzanisu@gmail.com",
     "name": "Kushuh",
@@ -12,7 +11,7 @@
     "url": "https://github.com/Kushuh/kushuh-react-utils"
   },
   "description": "Some utils I often use in my applications.",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "private": false,
   "dependencies": {
     "react": "^16.13.1"
@@ -23,7 +22,7 @@
   ],
   "scripts": {
     "test-and-publish": "yarn test && yarn build && yarn publish",
-    "build": "rollup -c && tsc",
+    "build": "rm -rf ./build && rollup -c",
     "test": "jest"
   },
   "eslintConfig": {
@@ -70,6 +69,9 @@
     "rollup-plugin-terser": "^5.3.0",
     "rollup-plugin-typescript2": "^0.27.0",
     "ts-jest": "^25.5.0",
-    "typescript": "^3.9.2"
+    "ts-loader": "^7.0.4",
+    "typescript": "^3.9.2",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
   }
 }
