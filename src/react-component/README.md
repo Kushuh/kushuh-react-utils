@@ -1,6 +1,17 @@
-### React Component Functions
+# React Component Functions
 
-#### addPropsToChildren
+> Utils function for managing React Components and Classes.
+
+## List of functions
+
++ **[React Component functions](#react-component-functions)**
+    + [addPropsToChildren](#addpropstochildren)
+    + [setStateAsync](#setstateasync)
++ **[Copyright](#copyright)**
+
+---
+
+### addPropsToChildren
 
 Add the key-value pairs of a javascript object to the properties of a list of React Nodes.
 
@@ -75,7 +86,7 @@ A Props function receives two parameters : the original props, and an index to d
 
 ✅ Single child can be a single element, or an array of one element.
 
-#### setStateAsync
+### setStateAsync
 
 Wrap context.setState function in an async Promise.
 
