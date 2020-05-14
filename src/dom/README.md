@@ -1,6 +1,6 @@
 # DOM Utils
 
-> Utils function for interacting with DOM (requires a valid DOM context).
+> Utils functions for interacting with DOM (requires a valid DOM context).
 
 ⚠️ The below utils require a valid DOM context.
 
@@ -25,7 +25,7 @@ Returns some information about the rendered fonts of an element.
 
 ```javascript
 // element must be an HTMLElement, such as returned by a React.RefObject.
-getFontInformation(element);
+const {fontSize, fontFamily, color} = getFontInformation(element);
 ```
 
 #### loadFonts
