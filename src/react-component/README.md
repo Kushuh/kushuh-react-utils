@@ -104,8 +104,6 @@ class MyClassComponent extends React.Component {
 }
 ```
 
-ℹ️ Never rejects.
-
 ℹ️ Resolves Empty.
 
 ## Copyright

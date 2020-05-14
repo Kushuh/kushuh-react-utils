@@ -36,7 +36,7 @@ Ensure every rendered font has loaded for a given element. Returns a Promise.
 // Promise returns empty on success.
 // Returns {unsupported: true} if FontFaceSet is not implemented on current browser.
 // Rejects on unexpected error.
-const unsupported = await loadFonts(element);
+const error = await loadFonts(element);
 ```
 
 ⚠ Only works with browsers that implement the [FontFaceSet interface](https://developer.mozilla.org/en-US/docs/Web/API/Document/fonts).
