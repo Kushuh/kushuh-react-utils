@@ -11,14 +11,13 @@
     "url": "https://github.com/Kushuh/kushuh-react-utils"
   },
   "description": "Some utils I often use in my applications.",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "private": false,
   "dependencies": {
     "react": "^16.13.1"
   },
-  "main": "./lib/index.js",
+  "main": "./build/index.js",
   "files": [
-    "lib/*.js",
     "build/*"
   ],
   "scripts": {
