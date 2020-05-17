@@ -15,6 +15,7 @@
     + [Parsers](#parsers)
         + [getSelectionRange](#getselectionrange)
         + [setRange](#setrange)
+        + [textNodesUnder](#textnodesunder)
 + **[Copyright](#copyright)**
 
 ---
