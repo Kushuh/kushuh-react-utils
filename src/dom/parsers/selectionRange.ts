@@ -70,6 +70,10 @@ const getSelectionRange: (element: HTMLElement) => Selection = (element: HTMLEle
 
 const setRange: (element: HTMLElement, start: number, end?: number) => void =
     (element: HTMLElement, start: number, end?: number) => {
+        if (element.innerText == null || element.innerText.length === 0) {
+            return;
+        }
+
         const textNodes = textNodesUnder(element);
 
         /**
