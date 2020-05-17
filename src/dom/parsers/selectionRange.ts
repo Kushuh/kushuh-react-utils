@@ -19,9 +19,11 @@ const textNodesUnder: (element: HTMLElement) => Array<HTMLElement> = (element: H
     const a = [];
     const walk = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
 
-    while(n = walk.nextNode()) a.push(n);
+    while(n = walk.nextNode()) {
+        a.push(n);
+    }
 
-    return a;
+    return a.filter(x => x != null && x.innerText != null);
 }
 
 // From https://stackoverflow.com/a/4812022/9021186
@@ -70,6 +72,9 @@ const getSelectionRange: (element: HTMLElement) => Selection = (element: HTMLEle
 
 const setRange: (element: HTMLElement, start: number, end?: number) => void =
     (element: HTMLElement, start: number, end?: number) => {
+        /**
+         * No need for useless computation if no text content.
+         */
         if (element.innerText == null || element.innerText.length === 0) {
             return;
         }
@@ -86,7 +91,7 @@ const setRange: (element: HTMLElement, start: number, end?: number) => void =
         /**
          * Avoid error when no textNode (cannot set caret).
          */
-        if (textNodes.length) {
+        if (textNodes.length > 0) {
             const range = document.createRange();
 
             /**
@@ -97,16 +102,15 @@ const setRange: (element: HTMLElement, start: number, end?: number) => void =
              * label was detected).
              */
             let i = 0;
-            let preLength = textNodes[i].innerText.length;
-            while (preLength <= start) {
+            let preLength = textNodes[0].innerText.length;
+            while (preLength <= start && i < textNodes.length) {
                 i++;
                 preLength += textNodes[i].innerText.length;
             }
 
             const startNode = textNodes[i];
             const startOffset = start - preLength + startNode.innerText.length;
-
-            while (preLength < end) {
+            while (preLength < end && i < textNodes.length) {
                 i++;
                 preLength += textNodes[i].innerText.length;
             }
