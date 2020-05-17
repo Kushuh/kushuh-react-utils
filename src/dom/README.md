@@ -14,6 +14,7 @@
         + [loadFonts](#loadfonts)
     + [Parsers](#parsers)
         + [getSelectionRange](#getselectionrange)
+        + [setRange](#setrange)
 + **[Copyright](#copyright)**
 
 ---
@@ -80,10 +81,19 @@ Set the caret to the given absolute positions in the element.
 ```javascript
 // start and end refer to the boundaries of the current selection.
 // index is based on the character position inside the rendered text (innerText).
-// end is optional, and omitting it will place the caret without
-// selecting any character.
+// end is optional, and omitting it will merge it with start point.
 setRange(element, start, end?);
 ```
+
+#### textNodesUnder
+
+Returns all textNodes under an element in the DOM tree.
+
+```javascript
+const textNodes = textNodesUnder(element);
+```
+
+ℹ️ No textNode will return an Array with length 0.
 
 ## Copyright
 2020 Kushuh - MIT license

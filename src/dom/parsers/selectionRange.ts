@@ -119,4 +119,4 @@ const setRange: (element: HTMLElement, start: number, end?: number) => void =
         }
     };
 
-export {getSelectionRange, setRange};
+export {getSelectionRange, setRange, textNodesUnder};
