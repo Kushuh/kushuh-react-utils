@@ -13,17 +13,22 @@ interface Selection {
     }
 }
 
-// From https://stackoverflow.com/a/10730777/9021186
-const textNodesUnder: (element: HTMLElement) => Array<HTMLElement> = (element: HTMLElement) => {
-    let n;
-    const a = [];
-    const walk = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
+// From https://stackoverflow.com/a/23030157/9021186
+const textNodesUnder: (element: HTMLElement) => Array<Text> = (element: HTMLElement) => {
+    const recursor = n => {
+        let i: number, a: Text[] = [];
+        if (n.nodeType !== 3) {
+            if (n.childNodes)
+                for (i = 0; i < n.childNodes.length; ++i)
+                    a = a.concat(recursor(n.childNodes[i]));
+        } else {
+            a.push(n as Text);
+        }
 
-    while(n = walk.nextNode()) {
-        a.push(n);
-    }
+        return a;
+    };
 
-    return a.filter(x => x != null && x.innerText != null);
+    return recursor(element);
 }
 
 // From https://stackoverflow.com/a/4812022/9021186
@@ -88,6 +93,8 @@ const setRange: (element: HTMLElement, start: number, end?: number) => void =
         end = end == null ? start : end;
         end = Math.min(element.innerText.length, end);
 
+        console.log(textNodes, start, end);
+
         /**
          * Avoid error when no textNode (cannot set caret).
          */
@@ -102,21 +109,21 @@ const setRange: (element: HTMLElement, start: number, end?: number) => void =
              * label was detected).
              */
             let i = 0;
-            let preLength = textNodes[0].innerText.length;
-            while (preLength <= start && i < textNodes.length) {
+            let preLength = textNodes[0].data.length;
+            while (preLength <= start && i < textNodes.length - 1) {
                 i++;
-                preLength += textNodes[i].innerText.length;
+                preLength += textNodes[i].data.length;
             }
 
             const startNode = textNodes[i];
-            const startOffset = start - preLength + startNode.innerText.length;
-            while (preLength < end && i < textNodes.length) {
+            const startOffset = start - preLength + startNode.data.length;
+            while (preLength < end && i < textNodes.length - 1) {
                 i++;
-                preLength += textNodes[i].innerText.length;
+                preLength += textNodes[i].data.length;
             }
 
             const endNode = textNodes[i];
-            const endOffset = end - preLength + endNode.innerText.length;
+            const endOffset = end - preLength + endNode.data.length;
 
             range.setStart(startNode, startOffset);
             range.setEnd(endNode, endOffset);

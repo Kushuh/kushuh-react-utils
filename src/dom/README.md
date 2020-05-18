@@ -88,11 +88,14 @@ setRange(element, start, end?);
 
 #### textNodesUnder
 
-Returns all textNodes under an element in the DOM tree.
+Returns an Array of all textNodes under an element in the DOM tree.
 
 ```javascript
 const textNodes = textNodesUnder(element);
 ```
+
+ℹ️ [textNodes](https://developer.mozilla.org/en-US/docs/Web/API/Text) returned by the function are different from regular HTML elements.
+You can access underlying text from textNode.data.
 
 ℹ️ No textNode will return an Array with length 0.
 
